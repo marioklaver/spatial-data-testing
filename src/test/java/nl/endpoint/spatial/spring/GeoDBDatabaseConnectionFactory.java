@@ -1,4 +1,4 @@
-package nl.endpoint.spatial;
+package nl.endpoint.spatial.spring;
 
 
 import geodb.GeoDB;

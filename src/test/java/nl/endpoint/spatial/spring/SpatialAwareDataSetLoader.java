@@ -1,6 +1,7 @@
-package nl.endpoint.spatial;
+package nl.endpoint.spatial.spring;
 
 import com.github.springtestdbunit.dataset.AbstractDataSetLoader;
+import nl.endpoint.spatial.SpatialAwareXmlDataSet;
 import org.dbunit.dataset.IDataSet;
 import org.springframework.core.io.Resource;
 

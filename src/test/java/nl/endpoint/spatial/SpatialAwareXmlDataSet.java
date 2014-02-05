@@ -1,8 +1,5 @@
 package nl.endpoint.spatial;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.WKBWriter;
-import com.vividsolutions.jts.io.WKTReader;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.xml.XmlDataSet;
 
@@ -32,16 +29,7 @@ public class SpatialAwareXmlDataSet extends XmlDataSet {
     private void convertGeometryColumnsFromTextToBinary(final Object[] values) {
         for (int i = 0; i < values.length; i++) {
             if (values[i] != null && values[i].toString().startsWith("GEOM_")) {
-                WKTReader fromText = new WKTReader();
-                byte[] geometryBlob;
-                try {
-                    Geometry geometry = fromText.read(values[i].toString().substring(5));
-                    WKBWriter writer = new WKBWriter();
-                    geometryBlob = writer.write(geometry);
-                } catch (com.vividsolutions.jts.io.ParseException e) {
-                    throw new RuntimeException("Not a WKT string:" + values[i].toString().substring(5));
-                }
-                values[i] = geometryBlob;
+                values[i] = GeometryUtil.convertFromTextToBinary(values[i].toString().substring(5));
             }
         }
     }

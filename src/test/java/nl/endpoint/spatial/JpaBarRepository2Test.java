@@ -1,7 +1,6 @@
 package nl.endpoint.spatial;
 
 import com.vividsolutions.jts.geom.Coordinate;
-import geodb.GeoDB;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
@@ -46,7 +45,6 @@ public class JpaBarRepository2Test {
         IDataSet dataSet = new SpatialAwareXmlDataSet(
                         getClass().getResourceAsStream("/nl/endpoint/spatial/sampleData2.xml"));
         dbUnitCon.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new H2DataTypeFactory());
-        GeoDB.InitGeoDB(con);
 
         try {
             DatabaseOperation.CLEAN_INSERT.execute(dbUnitCon, dataSet);

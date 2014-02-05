@@ -20,7 +20,7 @@
 	</bean>
 
     <bean id="dbUnitDatabaseConnection"
-          class="nl.endpoint.spatial.GeoDBDatabaseConnectionFactory">
+          class="nl.endpoint.spatial.spring.GeoDBDatabaseConnectionFactory">
         <property name="dataSource" ref="dataSource" />
     </bean>
 
