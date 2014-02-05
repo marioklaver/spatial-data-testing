@@ -35,11 +35,6 @@ public class JpaBarRepository implements BarRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Override
-    public Bar get(int id) {
-        return this.entityManager.find(Bar.class, id);
-    }
-
     @SuppressWarnings("unchecked")
     @Override
     public List<Bar> findByLocation(Coordinate startPoint, int range) {
