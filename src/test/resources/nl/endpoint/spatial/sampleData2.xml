@@ -1,0 +1,23 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+    <table name="Bar">
+        <column>ID</column>
+        <column>NAME</column>
+        <column>LOCATION</column>
+        <row>
+            <value>0</value>
+            <value>Cafe 't Haantje</value>
+            <value>GEOM_POINT(110 85)</value>
+        </row>
+        <row>
+            <value>1</value>
+            <value>Cafe De Pijp</value>
+            <value>GEOM_POINT(20 50)</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>Cafe The Hide Away</value>
+            <value>GEOM_POINT(80 100)</value>
+        </row>
+    </table>
+</dataset>
