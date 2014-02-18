@@ -4,7 +4,7 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import com.vividsolutions.jts.geom.Coordinate;
-import nl.endpoint.spatial.spring.SpatialAwareXmlDataSetLoader;
+import nl.endpoint.spatial.spring.SpatialAwareFlatXmlDataSetLoader;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +21,14 @@ import static org.fest.assertions.api.Assertions.extractProperty;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class, DbUnitTestExecutionListener.class })
-@DbUnitConfiguration(databaseConnection = "dbUnitDatabaseConnection", dataSetLoader = SpatialAwareXmlDataSetLoader.class)
+@DbUnitConfiguration(databaseConnection = "dbUnitDatabaseConnection", dataSetLoader = SpatialAwareFlatXmlDataSetLoader.class)
 public class JpaBarRepositoryTest {
 
     @Autowired
     private BarRepository barRepository;
 
     @Test
-    @DatabaseSetup("knownBars.xml")
+    @DatabaseSetup("knownBars-flatXml.xml")
     public void findByLocationShouldReturnAllBarsWithinRange() throws Exception {
         List<Bar> bars = this.barRepository.findByLocation(new Coordinate(100, 100), 50);
         assertThat(extractProperty("name").from(bars))
