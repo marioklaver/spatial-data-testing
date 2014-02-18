@@ -6,13 +6,13 @@
         <column>LOCATION</column>
         <row>
             <value>0</value>
-            <value>Cafe 't Haantje</value>
-            <value>GEOM_POINT(110 85)</value>
+            <value>Cafe De Pijp</value>
+            <value>GEOM_POINT(20 20)</value>
         </row>
         <row>
             <value>1</value>
-            <value>Cafe De Pijp</value>
-            <value>GEOM_POINT(20 50)</value>
+            <value>Cafe 't Haantje</value>
+            <value>GEOM_POINT(110 85)</value>
         </row>
         <row>
             <value>2</value>
